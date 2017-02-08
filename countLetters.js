@@ -19,12 +19,15 @@ function countLetters(string){
 	var letterList = string.split("");
 	var breakdown = {};
 
-	for (currentLetter in letterList){
-		if (breakdown.currentLetter){
-			breakdown.currentLetter += 1;
+	for (currentLetterIndex in letterList){
+		var letter = letterList[currentLetterIndex];
+		breakdown[letter] += 1;
+
+		if (breakdown[letter]){
+			breakdown[letter] += 1;
 		}
 		else{
-			breakdown.currentLetter = 1;	
+			breakdown[letter] = 1;	
 		}
 	}
 	return breakdown;
